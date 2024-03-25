@@ -1,25 +1,67 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { useQuery } from "react-query";
+//Components
+import Item from "./Item/item";
+import Drawer from "@material-ui/core/Drawer";
+import LinearProgress from "@material-ui/core/LinearProgress";
+import Grid from "@material-ui/core/Grid";
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
+import Badge from "@material-ui/core/Badge";
+//Styles
+import { Wrapper,StyledButton } from "./App.styles";
+//Types
+export type CartItemType = {
+  id: number;
+  category: string;
+  description: string;
+  price: number;
+  title: string;
+  amount: Number;
+  image: string;
+};
+
+const getProducts = async () =>
+  await (await fetch("https://fakestoreapi.com/products")).json();
 
 function App() {
+  const [cartOpen, setCartOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([] as CartItemType[]); 
+
+  const { isLoading, error, data } = useQuery("products", getProducts);
+  if (isLoading) return <LinearProgress />;
+  if (error) return <p>An error has occurred</p>;
+  console.log(data);
+
+  function getTotalItems(items: CartItemType[]) {
+    return null;
+  }
+
+  function handleAddToCart(clickedItem: CartItemType) {
+    return null;
+  }
+
+  function handleRemoveFromCart() {
+    return null;
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <Drawer anchor="right" open = {cartOpen} onClose={()=> setCartOpen(false)}>
+        Cart goes here
+      </Drawer>
+      <StyledButton onClick={()=> {setCartOpen(true)}} >
+        <Badge badgeContent = {getTotalItems(cartItems)} color="error">
+          <AddShoppingCartIcon />
+        </Badge>
+      </StyledButton>
+
+      <Grid container spacing={3}>
+        {data?.map((item: CartItemType) => (
+          <Grid xs={12} sm={4} item key={item.id}>
+            <Item item={item} handleAddToCart={handleAddToCart} />
+          </Grid>
+        ))}
+      </Grid>
+    </Wrapper>
   );
 }
 
