@@ -8,30 +8,32 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import Grid from "@material-ui/core/Grid";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import Badge from "@material-ui/core/Badge";
+import itemsProducts from "./itemsProducts";
 //Styles
 import { Wrapper,StyledButton } from "./App.styles";
 //Types
 export type CartItemType = {
   id: number;
-  category: string;
-  description: string;
-  price: number;
-  title: string;
-  amount: number;
   image: string;
+  title: string;
+  price: number;
+  description: string;
+  amount:number;
+
+
 };
 
-const getProducts = async () =>
-  await (await fetch("https://fakestoreapi.com/products")).json();
+// const getProducts = async () =>
+//   await (await fetch("https://fakestoreapi.com/products")).json();
 
 function App() {
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([] as CartItemType[]); 
 
-  const { isLoading, error, data } = useQuery("products", getProducts);
-  if (isLoading) return <LinearProgress />;
-  if (error) return <p>An error has occurred</p>;
-  console.log(data);
+  // const { isLoading, error, data } = useQuery("products", getProducts);
+  // if (isLoading) return <LinearProgress />;
+  // if (error) return <p>An error has occurred</p>;
+  // console.log(data);
 
   function getTotalItems(items: CartItemType[]) {
     return items.reduce((ack: number, item) => ack + item.amount, 0);
@@ -73,7 +75,7 @@ function App() {
       </StyledButton>
 
       <Grid container spacing={3}>
-        {data?.map((item: CartItemType) => (
+        {itemsProducts.map((item: CartItemType) => (
           <Grid xs={12} sm={4} item key={item.id}>
             <Item item={item} handleAddToCart={handleAddToCart} />
           </Grid>
