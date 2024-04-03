@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 //Components
 import Item from "./Item/item";
 import Cart from "./Cart/Cart";
@@ -9,8 +10,12 @@ import Grid from "@material-ui/core/Grid";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import Badge from "@material-ui/core/Badge";
 import itemsProducts from "./itemsProducts";
+import Layout from "./Layout";
+import Home from "./pages/Home";
+import SkinCare from "./pages/SkinCare";
 //Styles
-import { Wrapper,StyledButton } from "./App.styles";
+import { Wrapper, StyledButton } from "./App.styles";
+import ColorSchemesExample from "./Navbar/CollapseNavbar";
 //Types
 export type CartItemType = {
   id: number;
@@ -18,17 +23,14 @@ export type CartItemType = {
   title: string;
   price: number;
   description: string;
-  amount:number;
-
-
+  amount: number;
 };
 
 // const getProducts = async () =>
 //   await (await fetch("https://fakestoreapi.com/products")).json();
 
 function App() {
-  const [cartOpen, setCartOpen] = useState(false);
-  const [cartItems, setCartItems] = useState([] as CartItemType[]); 
+  const [cartItems, setCartItems] = useState([] as CartItemType[]);
 
   // const { isLoading, error, data } = useQuery("products", getProducts);
   // if (isLoading) return <LinearProgress />;
@@ -40,48 +42,56 @@ function App() {
   }
 
   function handleAddToCart(clickedItem: CartItemType) {
-    setCartItems(prev => {
+    setCartItems((prev) => {
       //1.Is the item already added in the cart?
-      const isItemInCart = prev.find(item => item.id === clickedItem.id);
+      const isItemInCart = prev.find((item) => item.id === clickedItem.id);
 
-      if(isItemInCart){
-        return prev.map(item => item.id === clickedItem.id ? {...item, amount: item.amount + 1} : item)
-      };
+      if (isItemInCart) {
+        return prev.map((item) =>
+          item.id === clickedItem.id
+            ? { ...item, amount: item.amount + 1 }
+            : item
+        );
+      }
       //First timem the item is added
-      return [...prev, {...clickedItem, amount: 1}];
-    })
+      return [...prev, { ...clickedItem, amount: 1 }];
+    });
   }
 
-  function handleRemoveFromCart(id:number) {
-    setCartItems(prev =>
-       prev.reduce((ack, item)=>{
-        if(item.id === id){
-          if(item.amount === 1) return ack;
-          return[...ack, {...item, amount: item.amount - 1}];
-        }else{
+  function handleRemoveFromCart(id: number) {
+    setCartItems((prev) =>
+      prev.reduce((ack, item) => {
+        if (item.id === id) {
+          if (item.amount === 1) return ack;
+          return [...ack, { ...item, amount: item.amount - 1 }];
+        } else {
           return [...ack, item];
-        }}, [] as CartItemType[])
-        );
+        }
+      }, [] as CartItemType[])
+    );
   }
   return (
-    <Wrapper>
-      <Drawer anchor="right" open = {cartOpen} onClose={()=> setCartOpen(false)}>
-       <Cart cartItems={cartItems} addToCart={handleAddToCart} removeFromCart={handleRemoveFromCart} ></Cart>
-      </Drawer>
-      <StyledButton onClick={()=> {setCartOpen(true)}} >
-        <Badge badgeContent = {getTotalItems(cartItems)} color="error">
-          <AddShoppingCartIcon />
-        </Badge>
-      </StyledButton>
+    <>   <Router>
+      <ColorSchemesExample></ColorSchemesExample>
+   
+        <Routes>
+          {/* <Route element={<Layout />}></Route> */}
+          <Route path="/" element={<Home />} />
 
-      <Grid container spacing={3}>
-        {itemsProducts.map((item: CartItemType) => (
-          <Grid xs={12} sm={4} item key={item.id}>
-            <Item item={item} handleAddToCart={handleAddToCart} />
-          </Grid>
-        ))}
-      </Grid>
-    </Wrapper>
+          <Route
+            path="/SkinCare"
+            element={
+              <SkinCare
+                cartItems={cartItems}
+                addToCart={handleAddToCart}
+                removeFromCart={handleRemoveFromCart}
+                totalItems={getTotalItems}
+              />
+            }
+          />
+        </Routes>
+      </Router>
+    </>
   );
 }
 

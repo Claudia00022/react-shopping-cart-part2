@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 //Types
 import { CartItemType } from "../App";
 //Styles
-import { Wrapper } from "./item.styles";
+// import { Wrapper } from "./item.styles";
 import Card from 'react-bootstrap/Card';
 
 type Props = {
@@ -12,8 +12,8 @@ type Props = {
 
 
 const Item : React.FC<Props> = ({item, handleAddToCart}) => (
-    <Wrapper>
-    <Card style={{ width: '18rem' }}>
+      
+    <Card className="mt-5" style={{ width: '18rem' }}>
     <Card.Img variant="top" src= {item.image} />
     <Card.Body>
       <Card.Title>{item.title}</Card.Title>
@@ -23,7 +23,7 @@ const Item : React.FC<Props> = ({item, handleAddToCart}) => (
       <Button variant="primary" onClick={()=> handleAddToCart(item)}>Add to cart</Button>
     </Card.Body>
   </Card>
-  </Wrapper>
+
 );
 
 export default Item;
