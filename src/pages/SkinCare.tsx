@@ -16,15 +16,15 @@ import itemsProducts from "../itemsProducts";
         cartItems : CartItemType[];
         addToCart : (clickedItem: CartItemType) => void;
         removeFromCart: (id: number) => void;
-        totalItems: (items: CartItemType[]) => number;
+       
     }
 
 
-const SkinCare : React.FC<Props> = ({cartItems, addToCart, removeFromCart, totalItems}) =>{
-    const [cartOpen, setCartOpen] = useState(false);
+const SkinCare : React.FC<Props> = ({cartItems, addToCart, removeFromCart}) =>{
+    // const [cartOpen, setCartOpen] = useState(false);
     return(
     <Wrapper>
-    <Drawer
+    {/* <Drawer
       anchor="right"
       open={cartOpen}
       onClose={() => setCartOpen(false)}
@@ -34,8 +34,8 @@ const SkinCare : React.FC<Props> = ({cartItems, addToCart, removeFromCart, total
           addToCart={addToCart}
           removeFromCart={removeFromCart}
       ></Cart>
-    </Drawer>
-    <StyledButton
+    </Drawer> */}
+    {/* <StyledButton
       onClick={() => {
         setCartOpen(true);
       }}
@@ -43,7 +43,7 @@ const SkinCare : React.FC<Props> = ({cartItems, addToCart, removeFromCart, total
       <Badge badgeContent={totalItems(cartItems)} color="error">
         <AddShoppingCartIcon />
       </Badge>
-    </StyledButton>
+    </StyledButton> */}
 
     <Grid container spacing={3}>
       {itemsProducts.map((item: CartItemType) => (

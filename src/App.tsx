@@ -10,7 +10,6 @@ import Grid from "@material-ui/core/Grid";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import Badge from "@material-ui/core/Badge";
 import itemsProducts from "./itemsProducts";
-import Layout from "./Layout";
 import Home from "./pages/Home";
 import SkinCare from "./pages/SkinCare";
 //Styles
@@ -72,10 +71,13 @@ function App() {
   }
   return (
     <>   <Router>
-      <ColorSchemesExample></ColorSchemesExample>
+      <ColorSchemesExample
+       totalItems={getTotalItems}
+       cartItems={cartItems}
+       addToCart={handleAddToCart}
+       removeFromCart={handleRemoveFromCart}></ColorSchemesExample>
    
         <Routes>
-          {/* <Route element={<Layout />}></Route> */}
           <Route path="/" element={<Home />} />
 
           <Route
@@ -85,7 +87,7 @@ function App() {
                 cartItems={cartItems}
                 addToCart={handleAddToCart}
                 removeFromCart={handleRemoveFromCart}
-                totalItems={getTotalItems}
+               
               />
             }
           />
