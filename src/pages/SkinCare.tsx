@@ -1,11 +1,10 @@
-import { Drawer } from "@material-ui/core";
-import Cart from "../Cart/Cart";
-import { StyledButton } from "../App.styles";
+
+
 import { Wrapper } from "../App.styles";
-import Badge from "@material-ui/core/Badge";
-import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
-import Grid from "@material-ui/core/Grid";
-import { useState } from "react";
+
+
+import { Grid } from "@mui/material";
+
 import  {CartItemType}  from "../App";
 
 import Item from "../Item/item";

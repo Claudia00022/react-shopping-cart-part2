@@ -2,14 +2,7 @@ import { useState } from "react";
 import { useQuery } from "react-query";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 //Components
-import Item from "./Item/item";
-import Cart from "./Cart/Cart";
-import Drawer from "@material-ui/core/Drawer";
-import LinearProgress from "@material-ui/core/LinearProgress";
-import Grid from "@material-ui/core/Grid";
-import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
-import Badge from "@material-ui/core/Badge";
-import itemsProducts from "./itemsProducts";
+
 import Home from "./pages/Home";
 import SkinCare from "./pages/SkinCare";
 //Styles
