@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 //Components
 
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import SkinCare from "./pages/SkinCare";
 //Styles
 import { Wrapper, StyledButton } from "./App.styles";

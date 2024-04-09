@@ -11,17 +11,13 @@ import { Drawer } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpa } from "@fortawesome/free-solid-svg-icons";
 import Badge from "@mui/material/Badge";
+import Button from "@mui/material/Button";
 
 //Types
 import { CartItemType } from "../App";
 
 //Styles
-import {
-  LogIn,
-  NewLink,
-  RightBorder,
-  StyledButton,
-} from "./CollapseNavbarStyle";
+import { NewLink, RightBorder,StyledButton } from "./CollapseNavbarStyle";
 
 const logo = (
   <FontAwesomeIcon icon={faSpa} size="lg" style={{ color: "#ffffff" }} />
@@ -51,7 +47,7 @@ const ColorSchemesExample: React.FC<Props> = ({
         data-bs-theme="dark"
       >
         <Container fluid>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand style={{ marginLeft: "40px" }} href="#home">
             logo <span className="ms-3">{logo}</span>
           </Navbar.Brand>
           <RightBorder></RightBorder>
@@ -83,7 +79,22 @@ const ColorSchemesExample: React.FC<Props> = ({
                 hair care
               </NewLink>
             </Nav>
-            <LogIn>log IN </LogIn>
+            <Button
+              style={{
+                width: "100px",
+                borderRadius: "12px",
+                border: "1px solid #BEB985",
+                backgroundColor: "transparent",
+                textAlign: "center",
+                lineHeight: "20px",
+                fontWeight: 100,
+                textTransform: "none",
+                color: "white",
+                marginRight: "20px",
+              }}
+            >
+              Log in{" "}
+            </Button>
 
             <Drawer
               anchor="right"
@@ -100,11 +111,11 @@ const ColorSchemesExample: React.FC<Props> = ({
               onClick={() => {
                 setCartOpen(true);
               }}
+              style={{ marginRight: "40px" }}
             >
-              <Badge badgeContent = {totalItems(cartItems)} color = "error">
-              <AddShoppingCart style={{ color: "white" }} />
+              <Badge badgeContent={totalItems(cartItems)} color="error">
+                <AddShoppingCart style={{ color: "white" }} />
               </Badge>
-              {/* <span>{}</span> */}
             </StyledButton>
           </Navbar.Collapse>
         </Container>
