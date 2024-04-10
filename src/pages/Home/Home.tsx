@@ -1,12 +1,16 @@
 //Styles
-import { Wrapper } from "./Home.style";
-import backgroundImg from '../pageImg/backgrounImg.jpg';
+import { Wrapper} from "./Home.style";
+//Components
+import { NavLink } from "react-router-dom";
+
+
 
 const Home : React.FC = () =>{
     return(
     <>
-    <Wrapper  style={{backgroundImage: `url(${backgroundImg}) `, height: '100vh' }}>
-    <h1>klaudia</h1>
+    <Wrapper>
+        <div><h1>Self-love is the best love</h1></div>
+         <NavLink to = "skinCare"><button>shop now</button></NavLink>
     </Wrapper>
     </>
 )};

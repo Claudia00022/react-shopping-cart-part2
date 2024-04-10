@@ -45,9 +45,10 @@ const ColorSchemesExample: React.FC<Props> = ({
         expand="lg"
         className="opacity-50 bg-dark"
         data-bs-theme="dark"
+        style={{position: "fixed", width: "100vw"}}
       >
         <Container fluid>
-          <Navbar.Brand style={{ marginLeft: "40px" }} href="#home">
+          <Navbar.Brand style={{ marginLeft: "80px" }} href="#home">
             logo <span className="ms-3">{logo}</span>
           </Navbar.Brand>
           <RightBorder></RightBorder>
@@ -111,7 +112,7 @@ const ColorSchemesExample: React.FC<Props> = ({
               onClick={() => {
                 setCartOpen(true);
               }}
-              style={{ marginRight: "40px" }}
+              style={{ marginRight: "80px" }}
             >
               <Badge badgeContent={totalItems(cartItems)} color="error">
                 <AddShoppingCart style={{ color: "white" }} />
