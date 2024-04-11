@@ -4,7 +4,7 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 //Components
 
 import Home from "./pages/Home/Home";
-import SkinCare from "./pages/SkinCare";
+import SkinCare from "./pages/SkinCare/SkinCare";
 //Styles
 import { Wrapper, StyledButton } from "./App.styles";
 import ColorSchemesExample from "./Navbar/CollapseNavbar";

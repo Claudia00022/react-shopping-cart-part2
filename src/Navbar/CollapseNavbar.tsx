@@ -45,7 +45,7 @@ const ColorSchemesExample: React.FC<Props> = ({
         expand="lg"
         className="opacity-50 bg-dark"
         data-bs-theme="dark"
-        style={{position: "fixed", width: "100vw"}}
+        style={{position: "fixed", top: 0, zIndex:1000, width: "100vw"}}
       >
         <Container fluid>
           <Navbar.Brand style={{ marginLeft: "80px" }} href="#home">
