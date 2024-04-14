@@ -1,9 +1,10 @@
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 //Types
 import { CartItemType } from "../App";
 //Styles
-// import { Wrapper } from "./item.styles";
-import Card from 'react-bootstrap/Card';
+import { StyledCard, StyledCardTitle} from './item.styles';
+
 
 type Props = {
     item: CartItemType;
@@ -13,16 +14,16 @@ type Props = {
 
 const Item : React.FC<Props> = ({item, handleAddToCart}) => (
       
-    <Card className="mt-5" style={{ width: '18rem' }}>
+    <StyledCard className="mt-5" style={{ width: '18rem' }}>
     <Card.Img variant="top" src= {item.image} />
-    <Card.Body>
-      <Card.Title>{item.title}</Card.Title>
-      <Card.Text>
+    <Card.Body className='text-center' >
+      <StyledCardTitle>{item.title}</StyledCardTitle>
+      <Card.Text className='fw-bold'>
        {item.description}
       </Card.Text>
-      <Button variant="primary" onClick={()=> handleAddToCart(item)}>Add to cart</Button>
+      <Button  onClick={()=> handleAddToCart(item)}>Add to cart</Button>
     </Card.Body>
-  </Card>
+  </StyledCard>
 
 );
 

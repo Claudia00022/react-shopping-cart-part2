@@ -1,24 +1,21 @@
 import styled from "styled-components";
+import { Card, CardTitle } from "react-bootstrap";
 
-export const Wrapper = styled.div`
+export const StyledCard = styled(Card)`
+border-radius: 0;
+border-color: rgba(0, 0, 0, 0.4);
 
-height: 100%;
-border: 1px solid lightBlue;
-border-radius: 20px;
-
-
-
-
-img{
-    max-height: 200px;
-    object-fit:cover;
-    border-radius: 20px 20px 0 0 ;
-}
-
-div{
-    font- family: Arial, Helvetica, sans-serif;
-    padding: 1rem;
+.btn {
+    width: 75%;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+  }
   
-}
+`
 
-`;
+export const  StyledCardTitle = styled(CardTitle)`
+ font-family: "Karla";
+ font-size: 18px;
+ letter-spacing: 0.5px;
+`

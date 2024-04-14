@@ -1,5 +1,5 @@
 //Styles
-import { Wrapper } from "./SkinCare.style";
+import { Wrapper, Title, HorizontalLine, StyledAccordionHeader } from "./SkinCare.style";
 
 //Components
 import { CartItemType } from "../../App";
@@ -17,14 +17,16 @@ type Props = {
 const SkinCare: React.FC<Props> = ({ addToCart }) => {
   return (
     <>
-      <Wrapper>
-        <div className="acc">
-          <p>skin care</p>
-          <hr></hr>
+      <Title>skin care</Title>
+      <HorizontalLine></HorizontalLine>
+      <Wrapper className="container-fluid">
+        <div className="row  justify-content-between">
+
+        <div className="acc col-2">
           <Accordion defaultActiveKey="0">
             <Accordion.Item eventKey="0" className="border-0">
-              <Accordion.Header>type of skin </Accordion.Header>
-              <Accordion.Body>
+              <StyledAccordionHeader>type of skin </StyledAccordionHeader>
+              <Accordion.Body className="fs-6">
                 <p>lorem ipsum</p>
                 <p>lorem ipsum</p>
                 <p>lorem ipsum</p>
@@ -34,7 +36,7 @@ const SkinCare: React.FC<Props> = ({ addToCart }) => {
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="1" className="border-0">
-              <Accordion.Header>products </Accordion.Header>
+              <StyledAccordionHeader>products </StyledAccordionHeader>
               <Accordion.Body>
                 <p>lorem ipsum</p>
                 <p>lorem ipsum</p>
@@ -45,7 +47,7 @@ const SkinCare: React.FC<Props> = ({ addToCart }) => {
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="2" className="border-0">
-              <Accordion.Header>ingredients</Accordion.Header>
+              <StyledAccordionHeader>ingredients</StyledAccordionHeader>
               <Accordion.Body>
                 <p>lorem ipsum</p>
                 <p>lorem ipsum</p>
@@ -57,12 +59,15 @@ const SkinCare: React.FC<Props> = ({ addToCart }) => {
             </Accordion.Item>
           </Accordion>
         </div>
-        <div className="w-75 ms-auto row ">
+        <div className="col-9">
+        <div className=" row ">
           {itemsProducts.map((item: CartItemType) => (
             <div className="col-4" key={item.id}>
               <Item item={item} handleAddToCart={addToCart} />
             </div>
           ))}
+        </div>
+        </div>
         </div>
       </Wrapper>
     </>
