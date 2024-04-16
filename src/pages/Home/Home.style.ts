@@ -37,7 +37,7 @@ h1{
     border-radius: 12px;
     background-color: #6D5F2A;
     color: white;
-    font-family: ""Helvetica",sans-serif;
+    font-family: "Helvetica",sans-serif;
     font-size: 16px;
     font-weight: light;
     border: none;

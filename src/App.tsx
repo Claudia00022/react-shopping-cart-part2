@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useQuery } from "react-query";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 //Components
 
@@ -18,16 +17,11 @@ export type CartItemType = {
   amount: number;
 };
 
-// const getProducts = async () =>
-//   await (await fetch("https://fakestoreapi.com/products")).json();
-
 function App() {
   const [cartItems, setCartItems] = useState([] as CartItemType[]);
-
-  // const { isLoading, error, data } = useQuery("products", getProducts);
-  // if (isLoading) return <LinearProgress />;
-  // if (error) return <p>An error has occurred</p>;
-  // console.log(data);
+  const [backgroundColor, setBackgroundColorNav] = useState(
+    "rgba(5, 5, 5, 0.42)");
+  const [borderColor, setBorderColor] = useState("#BEB985")
 
   function getTotalItems(items: CartItemType[]) {
     return items.reduce((ack: number, item) => ack + item.amount, 0);
@@ -61,17 +55,38 @@ function App() {
         }
       }, [] as CartItemType[])
     );
-  }
+  };
+
+  function handleButtonClick(){
+    setBackgroundColorNav("#98946B");
+    setBorderColor("#FFFFFC");
+  };
+
+  function handleButtonBack(){
+    setBackgroundColorNav("rgba(5, 5, 5, 0.42)");
+    setBorderColor("#BEB985");
+  };
+
+
+
   return (
-    <>   <Router>
-      <ColorSchemesExample
-       totalItems={getTotalItems}
-       cartItems={cartItems}
-       addToCart={handleAddToCart}
-       removeFromCart={handleRemoveFromCart}></ColorSchemesExample>
-   
+    <>
+      {" "}
+      <Router>
+        <ColorSchemesExample
+          totalItems={getTotalItems}
+          cartItems={cartItems}
+          addToCart={handleAddToCart}
+          removeFromCart={handleRemoveFromCart}
+          buttonClick = {handleButtonClick}
+          buttonBack = {handleButtonBack}
+          backgroundColor= {backgroundColor}
+          borderColor = {borderColor}
+          
+        ></ColorSchemesExample>
+
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home changeColorNav={handleButtonClick} />} />
 
           <Route
             path="/SkinCare"
@@ -80,7 +95,6 @@ function App() {
                 cartItems={cartItems}
                 addToCart={handleAddToCart}
                 removeFromCart={handleRemoveFromCart}
-               
               />
             }
           />

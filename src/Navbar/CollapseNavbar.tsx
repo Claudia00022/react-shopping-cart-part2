@@ -28,6 +28,11 @@ type Props = {
   totalItems: (items: CartItemType[]) => number;
   addToCart: (clickedItem: CartItemType) => void;
   removeFromCart: (id: number) => void;
+  buttonClick : () => void; 
+  buttonBack : () => void;
+  backgroundColor: string;
+  borderColor: string;
+
 };
 
 const ColorSchemesExample: React.FC<Props> = ({
@@ -35,6 +40,11 @@ const ColorSchemesExample: React.FC<Props> = ({
   cartItems,
   addToCart,
   removeFromCart,
+  buttonClick,
+  buttonBack, 
+  backgroundColor,
+  borderColor
+
 }) => {
   const [cartOpen, setCartOpen] = useState(false);
 
@@ -43,23 +53,24 @@ const ColorSchemesExample: React.FC<Props> = ({
       <Navbar
         collapseOnSelect
         expand="lg"
-        className="opacity-50 bg-dark"
+        
         data-bs-theme="dark"
-        style={{position: "fixed", top: 0, zIndex:1000, width: "100vw"}}
+        style={{position: "fixed", top: 0, zIndex:1000, width: "100vw", backgroundColor: backgroundColor,  transition: "background-color 2s ease-out" }}
       >
         <Container fluid>
-          <Navbar.Brand style={{ marginLeft: "80px" }} href="#home">
+          <NewLink onClick = {buttonBack} to = "/" style={{ marginLeft: "80px" }} >
             logo <span className="ms-3">{logo}</span>
-          </Navbar.Brand>
+          </NewLink>
           <RightBorder></RightBorder>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <NewLink className=" ms-5 text-decoration-none text-light" to="/">
+              <NewLink onClick = {buttonBack} className=" ms-5 text-decoration-none text-light" to="/">
                 home
               </NewLink>
               <RightBorder></RightBorder>
               <NewLink
+                onClick={buttonClick}
                 className="text-decoration-none text-light ms-5"
                 to="/SkinCare"
               >
@@ -80,11 +91,13 @@ const ColorSchemesExample: React.FC<Props> = ({
                 hair care
               </NewLink>
             </Nav>
-            <Button
+            <Button 
               style={{
                 width: "100px",
                 borderRadius: "12px",
-                border: "1px solid #BEB985",
+                borderWidth: "1px",
+                borderStyle: "solid",
+                borderColor: borderColor,
                 backgroundColor: "transparent",
                 textAlign: "center",
                 lineHeight: "20px",
