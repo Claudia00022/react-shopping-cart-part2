@@ -2,14 +2,22 @@ import styled from "styled-components";
 import { Card, CardTitle } from "react-bootstrap";
 
 export const StyledCard = styled(Card)`
+
 border-radius: 0;
 border-color: rgba(0, 0, 0, 0.4);
 
 .btn {
-    width: 75%;
+    width: 50%;
     background-color: transparent;
     color: black;
-    border: 1px solid black;
+    border: 1px solid #BEB985;
+  }
+
+  .btn:hover{
+    background-color: #BEB985;
+    border-color: transparent;
+    color: white;
+
   }
   
 `

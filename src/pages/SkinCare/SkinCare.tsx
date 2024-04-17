@@ -30,11 +30,11 @@ const SkinCare: React.FC<Props> = ({ addToCart }) => {
             style={{
               marginLeft: "80px",
               paddingRight: "40px",
-              borderRight: "1px solid rgba(0, 0, 0, 0.4) ",
+              borderRight: "1px solid #BEB985 ",
             }}
             className="col-2"
           >
-            <Accordion>
+            <Accordion  defaultActiveKey="0">
               <Accordion.Item eventKey="0" className="border-0">
                 <StyledAccordionHeader>type of skin </StyledAccordionHeader>
                 <Accordion.Body className="fs-6">
@@ -73,7 +73,7 @@ const SkinCare: React.FC<Props> = ({ addToCart }) => {
           <div className="col-9">
             <div className=" row ">
               {itemsProducts.map((item: CartItemType) => (
-                <div className="col-4" key={item.id}>
+                <div className="col-4"  key={item.id}>
                   <Item item={item} handleAddToCart={addToCart} />
                 </div>
               ))}

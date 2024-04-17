@@ -2,13 +2,11 @@ import styled from "styled-components";
 import { AccordionHeader } from "react-bootstrap";
 
 export const Wrapper = styled.div`
+
+
  
 
-  div.acc {
-    margin-left: 80px;
-    padding-right: 40px;
-    border-right: 1px solid black;
-  }
+
 
   .accordion-button:not(.collapsed) {
     background-color: transparent;
@@ -38,7 +36,7 @@ export const HorizontalLine = styled.div`
   width: 50%;
   height: 1px;
   margin-left: 80px;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: #BEB985;
 `;
 
 export const StyledAccordionHeader = styled(AccordionHeader)`

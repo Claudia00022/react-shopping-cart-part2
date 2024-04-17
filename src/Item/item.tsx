@@ -21,7 +21,7 @@ const Item : React.FC<Props> = ({item, handleAddToCart}) => (
       <Card.Text className='fw-bold'>
        {item.description}
       </Card.Text>
-      <Button  onClick={()=> handleAddToCart(item)}>Add to cart</Button>
+      <Button  onClick={()=> handleAddToCart(item)}>Add to Basket</Button>
     </Card.Body>
   </StyledCard>
 
