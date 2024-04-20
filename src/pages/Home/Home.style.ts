@@ -43,6 +43,31 @@ h1{
     border: none;
  }
 
+ @media only screen and  (max-width: 992px) {
+   div{
+      width: 100%;
+      top: 50%;
+      background-color: rgba(5, 5, 5, 0.15);
+      text-align: center;
+      left:0;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-right: 40px;
+      padding-left: 40px;
+   }
+   h1{
+      font-size: 50px;
+   }
+
+   button{
+      left: 50%;
+      transform: translate(-50%, 0%);
+   }
+  }
+
+
+   
+
 
 
 
