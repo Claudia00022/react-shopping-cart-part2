@@ -17,7 +17,7 @@ import Button from "@mui/material/Button";
 import { CartItemType } from "../App";
 
 //Styles
-import { NewLink, RightBorder,StyledButton } from "./CollapseNavbarStyle";
+import { NewLink, RightBorder,StyledButton,StyledNavbar, PageLink, CartButton } from "./CollapseNavbarStyle";
 
 const logo = (
   <FontAwesomeIcon icon={faSpa} size="lg" style={{ color: "#ffffff" }} />
@@ -50,7 +50,7 @@ const ColorSchemesExample: React.FC<Props> = ({
 
   return (
     <>
-      <Navbar
+      <StyledNavbar
         collapseOnSelect
         expand="lg"
         
@@ -58,57 +58,58 @@ const ColorSchemesExample: React.FC<Props> = ({
         style={{position: "fixed", top: 0, zIndex:1000, width: "100vw", backgroundColor: backgroundColor,  transition: "background-color 2s ease-out" }}
       >
         <Container fluid>
-          <NewLink onClick = {buttonBack} to = "/" style={{ marginLeft: "80px" }} >
+          <NewLink onClick = {buttonBack} to = "/"  >
             logo <span className="ms-3">{logo}</span>
           </NewLink>
           <RightBorder></RightBorder>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <NewLink onClick = {buttonBack} className=" ms-5 text-decoration-none text-light" to="/">
+              <PageLink onClick = {buttonBack}  to="/">
                 home
-              </NewLink>
+              </PageLink>
               <RightBorder></RightBorder>
-              <NewLink
+              <PageLink
                 onClick={buttonClick}
-                className="text-decoration-none text-light ms-5"
+       
                 to="/SkinCare"
               >
                 skin care
-              </NewLink>
+              </PageLink>
               <RightBorder></RightBorder>
-              <NewLink
-                className="text-decoration-none text-light ms-5"
+              <PageLink
+            
                 to="/SkinCare"
               >
                 body care
-              </NewLink>
+              </PageLink>
               <RightBorder></RightBorder>
-              <NewLink
-                className="text-decoration-none text-light ms-5"
+              <PageLink
+              
                 to="/SkinCare"
               >
                 hair care
-              </NewLink>
+              </PageLink>
             </Nav>
-            <Button 
+            <CartButton
+              onClick={() => {
+                setCartOpen(true);
+              }}
+              style={{ marginRight: "60px" }}
+            >
+              <Badge badgeContent={totalItems(cartItems)} color="error">
+                <AddShoppingCart style={{ color: "white" }} />
+              </Badge>
+            </CartButton>
+            <StyledButton 
               style={{
-                width: "100px",
-                borderRadius: "12px",
-                borderWidth: "1px",
-                borderStyle: "solid",
+              
                 borderColor: borderColor,
-                backgroundColor: "transparent",
-                textAlign: "center",
-                lineHeight: "20px",
-                fontWeight: 100,
-                textTransform: "none",
-                color: "white",
-                marginRight: "20px",
+               
               }}
             >
               Log in{" "}
-            </Button>
+            </StyledButton>
 
             <Drawer
               anchor="right"
@@ -121,19 +122,10 @@ const ColorSchemesExample: React.FC<Props> = ({
                 removeFromCart={removeFromCart}
               ></Cart>
             </Drawer>
-            <StyledButton
-              onClick={() => {
-                setCartOpen(true);
-              }}
-              style={{ marginRight: "80px" }}
-            >
-              <Badge badgeContent={totalItems(cartItems)} color="error">
-                <AddShoppingCart style={{ color: "white" }} />
-              </Badge>
-            </StyledButton>
+          
           </Navbar.Collapse>
         </Container>
-      </Navbar>
+      </StyledNavbar>
     </>
   );
 };
