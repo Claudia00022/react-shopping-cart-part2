@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import { Navbar } from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
 
 export const StyledNavbar = styled(Navbar)`
   .navbar-toggler {
@@ -49,12 +50,65 @@ export const NewLink = styled(Link)`
   } */
 `;
 
+export const StyledDropdown = styled(Dropdown)`
+display: none;
+.btn{
+
+   padding: 0;
+   text-align: start;
+}
+
+
+ .btn-primary {
+background-color: transparent;
+border-color: transparent;
+
+}
+
+
+
+.dropdown-toggle::after{
+   border: none;
+   content:"+"; 
+   margin-left: 10px;
+}
+
+.dropdown-menu{
+   background-color: transparent;
+   border: none;
+}
+
+
+@media only screen and (max-width: 600px) and (max-width: 992px) {
+   display: block;
+
+
+
+
+    
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 992px) {
+ display: block;
+
+
+  
+
+
+  }
+
+
+
+`
+
 export const PageLink = styled(Link)`
   text-decoration: none;
   color: white;
   font-family: "Inria Serif";
   font-weight: 300;
   margin-left: 40px;
+
+
 
   @media only screen and (max-width: 600px) and (max-width: 992px) {
     margin: 0;
@@ -63,6 +117,11 @@ export const PageLink = styled(Link)`
     width: 30%;
     padding-bottom: 15px;
     padding-top: 15px;
+
+
+
+
+    
   }
 
   @media only screen and (min-width: 600px) and (max-width: 992px) {
@@ -72,7 +131,45 @@ export const PageLink = styled(Link)`
     width: 30%;
     padding-bottom: 15px;
     padding-top: 15px;
+
+
+  
+
+
   }
+
+
+`;
+
+
+export const PageLinkSkinCare = styled(Link)`
+  text-decoration: none;
+  color: white;
+  font-family: "Inria Serif";
+  font-weight: 300;
+  margin-left: 40px;
+
+
+
+  @media only screen and (max-width: 600px) and (max-width: 992px) {
+  display: none;
+
+
+
+
+    
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 992px) {
+  display: none;
+
+
+  
+
+
+  }
+
+
 `;
 
 export const RightBorder = styled.div`

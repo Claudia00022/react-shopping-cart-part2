@@ -4,6 +4,7 @@ import {
   Title,
   HorizontalLine,
   StyledAccordionHeader,
+  StyledAccordion
 } from "./SkinCare.style";
 
 //Components
@@ -34,7 +35,7 @@ const SkinCare: React.FC<Props> = ({ addToCart }) => {
             }}
             className="col-2"
           >
-            <Accordion  defaultActiveKey="0">
+            <StyledAccordion  defaultActiveKey="0">
               <Accordion.Item eventKey="0" className="border-0">
                 <StyledAccordionHeader>type of skin </StyledAccordionHeader>
                 <Accordion.Body className="fs-6">
@@ -68,12 +69,12 @@ const SkinCare: React.FC<Props> = ({ addToCart }) => {
                   <p>lorem ipsum</p>
                 </Accordion.Body>
               </Accordion.Item>
-            </Accordion>
+            </StyledAccordion>
           </div>
-          <div className="col-9">
+          <div className="  col-12  col-sm-12 col-md-12 col-lg-9">
             <div className=" row ">
               {itemsProducts.map((item: CartItemType) => (
-                <div className="col-4"  key={item.id}>
+                <div className="col col-md-6 col-lg-6 col-xl-4"  key={item.id}>
                   <Item item={item} handleAddToCart={addToCart} />
                 </div>
               ))}

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { AccordionHeader } from "react-bootstrap";
+import  Accordion  from "react-bootstrap/Accordion";
 
 export const Wrapper = styled.div`
 
@@ -25,6 +26,12 @@ export const Wrapper = styled.div`
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8'/%3E%3C/svg%3E");
   }
 `;
+
+export const StyledAccordion = styled(Accordion)`
+@media only screen and  (max-width: 992px) {
+  display: none;
+}
+`
 
 export const Title = styled.p`
   margin-left: 20%;

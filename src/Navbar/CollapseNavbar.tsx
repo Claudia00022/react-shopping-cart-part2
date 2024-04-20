@@ -12,12 +12,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpa } from "@fortawesome/free-solid-svg-icons";
 import Badge from "@mui/material/Badge";
 import Button from "@mui/material/Button";
+import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "react-bootstrap";
 
 //Types
 import { CartItemType } from "../App";
 
 //Styles
-import { NewLink, RightBorder,StyledButton,StyledNavbar, PageLink, CartButton } from "./CollapseNavbarStyle";
+import {
+  NewLink,
+  RightBorder,
+  StyledButton,
+  StyledNavbar,
+  PageLink,
+  CartButton,
+  StyledDropdown,
+  PageLinkSkinCare
+} from "./CollapseNavbarStyle";
 
 const logo = (
   <FontAwesomeIcon icon={faSpa} size="lg" style={{ color: "#ffffff" }} />
@@ -28,11 +38,10 @@ type Props = {
   totalItems: (items: CartItemType[]) => number;
   addToCart: (clickedItem: CartItemType) => void;
   removeFromCart: (id: number) => void;
-  buttonClick : () => void; 
-  buttonBack : () => void;
+  buttonClick: () => void;
+  buttonBack: () => void;
   backgroundColor: string;
   borderColor: string;
-
 };
 
 const ColorSchemesExample: React.FC<Props> = ({
@@ -41,55 +50,83 @@ const ColorSchemesExample: React.FC<Props> = ({
   addToCart,
   removeFromCart,
   buttonClick,
-  buttonBack, 
+  buttonBack,
   backgroundColor,
-  borderColor
-
+  borderColor,
 }) => {
   const [cartOpen, setCartOpen] = useState(false);
 
   return (
     <>
       <StyledNavbar
+     
         collapseOnSelect
         expand="lg"
-        
         data-bs-theme="dark"
-        style={{position: "fixed", top: 0, zIndex:1000, width: "100vw", backgroundColor: backgroundColor,  transition: "background-color 2s ease-out" }}
+        style={{
+          position: "fixed",
+          top: 0,
+          zIndex: 1000,
+          width: "100vw",
+          backgroundColor: backgroundColor,
+          transition: "background-color 2s ease-out",
+        }}
       >
         <Container fluid>
-          <NewLink onClick = {buttonBack} to = "/"  >
+          <NewLink onClick={buttonBack} to="/#home">
             logo <span className="ms-3">{logo}</span>
           </NewLink>
           <RightBorder></RightBorder>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <PageLink onClick = {buttonBack}  to="/">
+              <PageLink onClick={buttonBack} to="/" >
                 home
               </PageLink>
               <RightBorder></RightBorder>
-              <PageLink
-                onClick={buttonClick}
-       
-                to="/SkinCare"
-              >
+              <PageLinkSkinCare onClick={buttonClick} to="/SkinCare">
                 skin care
-              </PageLink>
+              </PageLinkSkinCare>
+              <StyledDropdown>
+                <Dropdown.Toggle id="dropdown-autoclose-true"> skin care   </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="/#SkinCare" onClick={buttonClick}>all products </Dropdown.Item>
+                    <StyledDropdown>
+                      <DropdownToggle id="dropdown-autoclose-true"> type of skin</DropdownToggle>
+                      <DropdownMenu>
+                        <DropdownItem>lorem ipsum</DropdownItem>
+                        <DropdownItem>lorem ipsum</DropdownItem>
+                        <DropdownItem>lorem ipsum</DropdownItem>
+                        <DropdownItem>lorem ipsum</DropdownItem>
+                      </DropdownMenu>
+                    </StyledDropdown>
+                    <StyledDropdown>
+                      <DropdownToggle id="dropdown-autoclose-true">products</DropdownToggle>
+                      <DropdownMenu>
+                        <DropdownItem>lorem ipsum</DropdownItem>
+                        <DropdownItem>lorem ipsum</DropdownItem>
+                        <DropdownItem>lorem ipsum</DropdownItem>
+                        <DropdownItem>lorem ipsum</DropdownItem>
+                      </DropdownMenu>
+                    </StyledDropdown>
+                    <StyledDropdown>
+                      <DropdownToggle id="dropdown-autoclose-true"> ingredients</DropdownToggle>
+                      <DropdownMenu>
+                        <DropdownItem>lorem ipsum</DropdownItem>
+                        <DropdownItem>lorem ipsum</DropdownItem>
+                        <DropdownItem>lorem ipsum</DropdownItem>
+                        <DropdownItem>lorem ipsum</DropdownItem>
+                      </DropdownMenu>
+                    </StyledDropdown>
+                    
+                  </Dropdown.Menu>
+             
+              </StyledDropdown>
+
               <RightBorder></RightBorder>
-              <PageLink
-            
-                to="/SkinCare"
-              >
-                body care
-              </PageLink>
+              <PageLink to="/SkinCare">body care</PageLink>
               <RightBorder></RightBorder>
-              <PageLink
-              
-                to="/SkinCare"
-              >
-                hair care
-              </PageLink>
+              <PageLink to="/SkinCare">hair care</PageLink>
             </Nav>
             <CartButton
               onClick={() => {
@@ -101,11 +138,9 @@ const ColorSchemesExample: React.FC<Props> = ({
                 <AddShoppingCart style={{ color: "white" }} />
               </Badge>
             </CartButton>
-            <StyledButton 
+            <StyledButton
               style={{
-              
                 borderColor: borderColor,
-               
               }}
             >
               Log in{" "}
@@ -122,7 +157,6 @@ const ColorSchemesExample: React.FC<Props> = ({
                 removeFromCart={removeFromCart}
               ></Cart>
             </Drawer>
-          
           </Navbar.Collapse>
         </Container>
       </StyledNavbar>
