@@ -1,8 +1,11 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
-import { Navbar } from "react-bootstrap";
-import { Dropdown } from "react-bootstrap";
+import  Navbar  from "react-bootstrap/Navbar";
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
+
+
 
 export const StyledNavbar = styled(Navbar)`
   .navbar-toggler {
@@ -30,7 +33,7 @@ export const StyledNavbar = styled(Navbar)`
   
 `;
 
-export const NewLink = styled(Link)`
+export const StyledNavbarBrand = styled(Navbar.Brand)`
   text-decoration: none;
   color: white;
   font-family: "Inria Serif";
@@ -50,7 +53,7 @@ export const NewLink = styled(Link)`
   } */
 `;
 
-export const StyledDropdown = styled(Dropdown)`
+export const StyledDropdown = styled(NavDropdown)`
 display: none;
 .btn{
 
@@ -78,6 +81,12 @@ border-color: transparent;
    border: none;
 }
 
+.nav-link{
+  width: 30%;
+   color: white ;
+   border-bottom: 1px solid white;
+}
+
 
 @media only screen and (max-width: 600px) and (max-width: 992px) {
    display: block;
@@ -101,7 +110,7 @@ border-color: transparent;
 
 `
 
-export const PageLink = styled(Link)`
+export const PageLink = styled(Nav.Link)`
   text-decoration: none;
   color: white;
   font-family: "Inria Serif";
@@ -142,7 +151,7 @@ export const PageLink = styled(Link)`
 `;
 
 
-export const PageLinkSkinCare = styled(Link)`
+export const PageLinkSkinCare = styled(Nav.Link)`
   text-decoration: none;
   color: white;
   font-family: "Inria Serif";

@@ -2,7 +2,6 @@ import { useState } from "react";
 
 //Components
 import Cart from "../Cart/Cart";
-
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -11,27 +10,29 @@ import { Drawer } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpa } from "@fortawesome/free-solid-svg-icons";
 import Badge from "@mui/material/Badge";
-import Button from "@mui/material/Button";
-import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "react-bootstrap";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 //Types
 import { CartItemType } from "../App";
 
 //Styles
 import {
-  NewLink,
   RightBorder,
   StyledButton,
   StyledNavbar,
   PageLink,
   CartButton,
   StyledDropdown,
-  PageLinkSkinCare
+  PageLinkSkinCare,
+  StyledNavbarBrand,
 } from "./CollapseNavbarStyle";
+
+
 
 const logo = (
   <FontAwesomeIcon icon={faSpa} size="lg" style={{ color: "#ffffff" }} />
 );
+
 
 type Props = {
   cartItems: CartItemType[];
@@ -59,7 +60,6 @@ const ColorSchemesExample: React.FC<Props> = ({
   return (
     <>
       <StyledNavbar
-     
         collapseOnSelect
         expand="lg"
         data-bs-theme="dark"
@@ -73,61 +73,91 @@ const ColorSchemesExample: React.FC<Props> = ({
         }}
       >
         <Container fluid>
-          <NewLink onClick={buttonBack} to="/#home">
+          <StyledNavbarBrand onClick={buttonBack} href="/#">
             logo <span className="ms-3">{logo}</span>
-          </NewLink>
+          </StyledNavbarBrand>
           <RightBorder></RightBorder>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <PageLink onClick={buttonBack} to="/" >
+              <PageLink onClick={buttonBack} href="/#">
                 home
               </PageLink>
               <RightBorder></RightBorder>
               <PageLinkSkinCare onClick={buttonClick} to="/SkinCare">
                 skin care
               </PageLinkSkinCare>
-              <StyledDropdown>
-                <Dropdown.Toggle id="dropdown-autoclose-true"> skin care   </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    <Dropdown.Item href="/#SkinCare" onClick={buttonClick}>all products </Dropdown.Item>
-                    <StyledDropdown>
-                      <DropdownToggle id="dropdown-autoclose-true"> type of skin</DropdownToggle>
-                      <DropdownMenu>
-                        <DropdownItem>lorem ipsum</DropdownItem>
-                        <DropdownItem>lorem ipsum</DropdownItem>
-                        <DropdownItem>lorem ipsum</DropdownItem>
-                        <DropdownItem>lorem ipsum</DropdownItem>
-                      </DropdownMenu>
-                    </StyledDropdown>
-                    <StyledDropdown>
-                      <DropdownToggle id="dropdown-autoclose-true">products</DropdownToggle>
-                      <DropdownMenu>
-                        <DropdownItem>lorem ipsum</DropdownItem>
-                        <DropdownItem>lorem ipsum</DropdownItem>
-                        <DropdownItem>lorem ipsum</DropdownItem>
-                        <DropdownItem>lorem ipsum</DropdownItem>
-                      </DropdownMenu>
-                    </StyledDropdown>
-                    <StyledDropdown>
-                      <DropdownToggle id="dropdown-autoclose-true"> ingredients</DropdownToggle>
-                      <DropdownMenu>
-                        <DropdownItem>lorem ipsum</DropdownItem>
-                        <DropdownItem>lorem ipsum</DropdownItem>
-                        <DropdownItem>lorem ipsum</DropdownItem>
-                        <DropdownItem>lorem ipsum</DropdownItem>
-                      </DropdownMenu>
-                    </StyledDropdown>
-                    
-                  </Dropdown.Menu>
-             
+
+              <StyledDropdown title="skin care" id="collapsible-nav-dropdown">
+                <NavDropdown.Item href="#SkinCare" onClick={buttonClick}>
+                  all products
+                </NavDropdown.Item>
+                <StyledDropdown
+                  title="type of skin"
+                  id="collapsible-nav-dropdown"
+                >
+                  <NavDropdown.Item href="#SkinCare" onClick={buttonClick}>
+                    {" "}
+                    type of skin
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#SkinCare" onClick={buttonClick}>
+                    {" "}
+                    type of skin
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#SkinCare" onClick={buttonClick}>
+                    {" "}
+                    type of skin
+                  </NavDropdown.Item>
+                </StyledDropdown>
+
+                <StyledDropdown title="products" id="collapsible-nav-dropdown">
+                  <NavDropdown.Item href="#SkinCare" onClick={buttonClick}>
+                    {" "}
+                    products
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#SkinCare" onClick={buttonClick}>
+                    {" "}
+                    products
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#SkinCare" onClick={buttonClick}>
+                    {" "}
+                    products
+                  </NavDropdown.Item>
+                </StyledDropdown>
+
+                <StyledDropdown
+                  title="ingredients"
+                  id="collapsible-nav-dropdown"
+                >
+                  <NavDropdown.Item href="#SkinCare" onClick={buttonClick}>
+                    {" "}
+                    ingredients
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#SkinCare" onClick={buttonClick}>
+                    {" "}
+                    ingredients
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#SkinCare" onClick={buttonClick}>
+                    {" "}
+                    ingredients
+                  </NavDropdown.Item>
+                </StyledDropdown>
               </StyledDropdown>
 
               <RightBorder></RightBorder>
-              <PageLink to="/SkinCare">body care</PageLink>
+
+              <PageLink href="#SkinCare" onClick={buttonClick}>
+                body care
+              </PageLink>
+
               <RightBorder></RightBorder>
-              <PageLink to="/SkinCare">hair care</PageLink>
+
+              <PageLink href="#SkinCare" onClick={buttonClick}>
+                hair care
+              </PageLink>
+
             </Nav>
+
             <CartButton
               onClick={() => {
                 setCartOpen(true);
