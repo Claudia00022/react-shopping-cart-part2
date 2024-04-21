@@ -5,6 +5,8 @@ export const StyledCard = styled(Card)`
 
 border-radius: 0;
 border-color: rgba(0, 0, 0, 0.4);
+width: 18rem;
+margin: auto;
 
 .btn {
     width: 50%;
@@ -26,4 +28,5 @@ export const  StyledCardTitle = styled(CardTitle)`
  font-family: "Karla";
  font-size: 18px;
  letter-spacing: 0.5px;
+
 `

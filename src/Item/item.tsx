@@ -14,7 +14,7 @@ type Props = {
 
 const Item : React.FC<Props> = ({item, handleAddToCart}) => (
       
-    <StyledCard className="mt-5" style={{ width: '18rem' }}>
+    <StyledCard className="mt-5">
     <Card.Img variant="top" src= {item.image} />
     <Card.Body className='text-center' >
       <StyledCardTitle>{item.title}</StyledCardTitle>

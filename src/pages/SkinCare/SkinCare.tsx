@@ -72,7 +72,7 @@ const SkinCare: React.FC<Props> = ({ addToCart }) => {
             </StyledAccordion>
           </div>
           <div className="  col-12  col-sm-12 col-md-12 col-lg-9">
-            <div className=" row ">
+            <div className="  row " style={{marginRight:0, marginLeft:0}}>
               {itemsProducts.map((item: CartItemType) => (
                 <div className="col col-md-6 col-lg-6 col-xl-4"  key={item.id}>
                   <Item item={item} handleAddToCart={addToCart} />
