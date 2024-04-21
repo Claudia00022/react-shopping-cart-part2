@@ -84,7 +84,7 @@ const ColorSchemesExample: React.FC<Props> = ({
                 home
               </PageLink>
               <RightBorder></RightBorder>
-              <PageLinkSkinCare onClick={buttonClick} to="/SkinCare">
+              <PageLinkSkinCare onClick={buttonClick} href = "/#SkinCare">
                 skin care
               </PageLinkSkinCare>
 
