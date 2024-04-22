@@ -76,6 +76,16 @@ const ColorSchemesExample: React.FC<Props> = ({
           <StyledNavbarBrand onClick={buttonBack} href="/#">
             logo <span className="ms-3">{logo}</span>
           </StyledNavbarBrand>
+          <CartButton
+              onClick={() => {
+                setCartOpen(true);
+              }}
+              style={{ marginRight: "60px" }}
+            >
+              <Badge badgeContent={totalItems(cartItems)} color="error">
+                <AddShoppingCart style={{ color: "white" }} />
+              </Badge>
+            </CartButton>
           <RightBorder></RightBorder>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -88,13 +98,14 @@ const ColorSchemesExample: React.FC<Props> = ({
                 skin care
               </PageLinkSkinCare>
 
-              <StyledDropdown title="skin care" id="collapsible-nav-dropdown">
+              <StyledDropdown title="skin care" id="collapsible-nav-dropdown" >
                 <NavDropdown.Item href="#SkinCare" onClick={buttonClick}>
                   all products
                 </NavDropdown.Item>
                 <StyledDropdown
                   title="type of skin"
                   id="collapsible-nav-dropdown"
+                
                 >
                   <NavDropdown.Item href="#SkinCare" onClick={buttonClick}>
                     {" "}
@@ -110,7 +121,7 @@ const ColorSchemesExample: React.FC<Props> = ({
                   </NavDropdown.Item>
                 </StyledDropdown>
 
-                <StyledDropdown title="products" id="collapsible-nav-dropdown">
+                <StyledDropdown title="products" id="collapsible-nav-dropdown" >
                   <NavDropdown.Item href="#SkinCare" onClick={buttonClick}>
                     {" "}
                     products
@@ -156,18 +167,11 @@ const ColorSchemesExample: React.FC<Props> = ({
                 hair care
               </PageLink>
 
+             
+
             </Nav>
 
-            <CartButton
-              onClick={() => {
-                setCartOpen(true);
-              }}
-              style={{ marginRight: "60px" }}
-            >
-              <Badge badgeContent={totalItems(cartItems)} color="error">
-                <AddShoppingCart style={{ color: "white" }} />
-              </Badge>
-            </CartButton>
+           
             <StyledButton
               style={{
                 borderColor: borderColor,

@@ -20,7 +20,7 @@ type Props = {
   removeFromCart: (id: number) => void;
 };
 
-const SkinCare: React.FC<Props> = ({ addToCart }) => {
+const SkinCare: React.FC<Props> = ({ addToCart, removeFromCart }) => {
   return (
     <>
       <Title>skin care</Title>
@@ -75,7 +75,7 @@ const SkinCare: React.FC<Props> = ({ addToCart }) => {
             <div className="  row " style={{marginRight:0, marginLeft:0}}>
               {itemsProducts.map((item: CartItemType) => (
                 <div className="col col-md-6 col-lg-6 col-xl-4"  key={item.id}>
-                  <Item item={item} handleAddToCart={addToCart} />
+                  <Item item={item} handleAddToCart={addToCart} handleRemoveFromCart={removeFromCart} />
                 </div>
               ))}
             </div>

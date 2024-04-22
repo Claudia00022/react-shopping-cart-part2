@@ -30,7 +30,9 @@ function App() {
   function handleAddToCart(clickedItem: CartItemType) {
     setCartItems((prev) => {
       //1.Is the item already added in the cart?
+  
       const isItemInCart = prev.find((item) => item.id === clickedItem.id);
+     
 
       if (isItemInCart) {
         return prev.map((item) =>
@@ -40,8 +42,8 @@ function App() {
         );
       }
       //First timem the item is added
-      return [...prev, { ...clickedItem, amount: 1 }];
-    });
+      return [...prev, { ...clickedItem, amount: 1 }]; 
+    }); 
   }
 
   function handleRemoveFromCart(id: number) {

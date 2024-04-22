@@ -85,8 +85,14 @@ border-color: transparent;
 .nav-link{
   width: 30%;
    color: white ;
+   font-family: "Inria Serif";
    border-bottom: 1px solid white;
+   font-weight: 300;
 }
+
+
+
+
 
 
 @media only screen and (max-width: 600px) and (max-width: 992px) {
@@ -221,18 +227,18 @@ margin-right: 80px !important;
 `;
 
 export const CartButton = styled(Button)`
+    position: absolute !important;
+   top: 10px !important;
+   right: 150px !important;
+
   
 
 
   @media only screen and (max-width: 600px) {
-   position: absolute !important;
-   top: 10px !important;
    right: 0 !important;
   }
 
   @media only screen and (min-width: 600px) and (max-width: 992px) {
-   position: absolute !important;
-   top: 10px !important;
    right: 0 !important;
   }
 
