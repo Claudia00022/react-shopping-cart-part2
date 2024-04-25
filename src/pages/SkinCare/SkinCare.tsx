@@ -18,9 +18,11 @@ type Props = {
   cartItems: CartItemType[];
   addToCart: (clickedItem: CartItemType) => void;
   removeFromCart: (id: number) => void;
+  productAmount : number;
+  handleAddToBasket : (items: CartItemType) => void; 
 };
 
-const SkinCare: React.FC<Props> = ({ addToCart, removeFromCart }) => {
+const SkinCare: React.FC<Props> = ({ addToCart, removeFromCart, cartItems, productAmount, handleAddToBasket}) => {
   return (
     <>
       <Title>skin care</Title>
@@ -75,7 +77,7 @@ const SkinCare: React.FC<Props> = ({ addToCart, removeFromCart }) => {
             <div className="  row " style={{marginRight:0, marginLeft:0}}>
               {itemsProducts.map((item: CartItemType) => (
                 <div className="col col-md-6 col-lg-6 col-xl-4"  key={item.id}>
-                  <Item item={item} handleAddToCart={addToCart} handleRemoveFromCart={removeFromCart} />
+                  <Item item={item} handleAddToCart={addToCart} handleRemoveFromCart={removeFromCart} cartItems={cartItems} productAmount = {productAmount} handleAddToBasket = {handleAddToBasket}   />
                 </div>
               ))}
             </div>

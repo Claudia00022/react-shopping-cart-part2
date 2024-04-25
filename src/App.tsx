@@ -22,9 +22,30 @@ function App() {
   const [backgroundColor, setBackgroundColorNav] = useState(
     "rgba(5, 5, 5, 0.42)");
   const [borderColor, setBorderColor] = useState("#BEB985")
+  
+  const [productAmount, setProductAmount] = useState(0)  
+  
+  
 
-  function getTotalItems(items: CartItemType[]) {
+
+  function handleAddtoCartBasket (items:CartItemType){
+    console.log(items.id);
+    if(items.id === 0 ){
+      setProductAmount(productAmount +1);
+    }else{
+      setProductAmount(productAmount);
+    }
+
+  } ;
+
+  
+
+ 
+
+  function getTotalItems(items: CartItemType[]) {   
+
     return items.reduce((ack: number, item) => ack + item.amount, 0);
+
   }
 
   function handleAddToCart(clickedItem: CartItemType) {
@@ -37,12 +58,12 @@ function App() {
       if (isItemInCart) {
         return prev.map((item) =>
           item.id === clickedItem.id
-            ? { ...item, amount: item.amount + 1 }
+            ? { ...item, amount: item.amount + clickedItem.amount}
             : item
         );
       }
       //First timem the item is added
-      return [...prev, { ...clickedItem, amount: 1 }]; 
+      return [...prev, { ...clickedItem, amount: clickedItem.amount }]; 
     }); 
   }
 
@@ -68,6 +89,12 @@ function App() {
     setBackgroundColorNav("rgba(5, 5, 5, 0.42)");
     setBorderColor("#BEB985");
   };
+
+//   const getItemQuantity = (id:number) =>{
+//     return cartItems.find(items => items.id === id) ?.amount || 0
+// };
+
+// console.log(getItemQuantity);
 
 
 
@@ -97,6 +124,11 @@ function App() {
                 cartItems={cartItems}
                 addToCart={handleAddToCart}
                 removeFromCart={handleRemoveFromCart}
+                productAmount = {productAmount}
+                handleAddToBasket = {handleAddtoCartBasket}
+      
+             
+             
               />
             }
           />
