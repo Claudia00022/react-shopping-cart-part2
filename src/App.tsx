@@ -48,7 +48,26 @@ function App() {
 
   }
 
-  function handleAddToCart(clickedItem: CartItemType) {
+  // function handleAddToCart(clickedItem: CartItemType) {
+  //   setCartItems((prev) => {
+  //     //1.Is the item already added in the cart?
+  
+  //     const isItemInCart = prev.find((item) => item.id === clickedItem.id);
+     
+
+  //     if (isItemInCart) {
+  //       return prev.map((item) =>
+  //         item.id === clickedItem.id
+  //           ? { ...item, amount:clickedItem.amount + 1 }
+  //           : item
+  //       );
+  //     }
+  //     //First timem the item is added
+  //     return [...prev, { ...clickedItem, amount: 5 }]; 
+  //   })
+  // }
+
+    function handleAddToCart(clickedItem: CartItemType) {
     setCartItems((prev) => {
       //1.Is the item already added in the cart?
   
@@ -58,7 +77,7 @@ function App() {
       if (isItemInCart) {
         return prev.map((item) =>
           item.id === clickedItem.id
-            ? { ...item, amount: item.amount + clickedItem.amount}
+            ? { ...item, amount:item.amount + clickedItem.amount }
             : item
         );
       }
@@ -66,6 +85,7 @@ function App() {
       return [...prev, { ...clickedItem, amount: clickedItem.amount }]; 
     })
   }
+
 
   function handleRemoveFromCart(id: number) {
     setCartItems((prev) =>
@@ -79,6 +99,19 @@ function App() {
       }, [] as CartItemType[])
     );
   };
+
+  function handleIncreaseQuantity(id:number) {
+    setCartItems((prev) =>
+      prev.reduce((ack, item) => {
+        if (item.id === id) {
+          if (item.amount === 1) return ack;
+          return [...ack, { ...item, amount: item.amount + 1 }];
+        } else {
+          return [...ack, item];
+        }
+      }, [] as CartItemType[])
+    );
+  }
 
   function handleButtonClick(){
     setBackgroundColorNav("#98946B");
@@ -111,7 +144,7 @@ function App() {
           buttonBack = {handleButtonBack}
           backgroundColor= {backgroundColor}
           borderColor = {borderColor}
-          
+          increaseQuantity = {handleIncreaseQuantity}
         ></ColorSchemesExample>
 
         <Routes>
@@ -126,6 +159,7 @@ function App() {
                 removeFromCart={handleRemoveFromCart}
                 productAmount = {productAmount}
                 handleAddToBasket = {handleAddtoCartBasket}
+           
       
              
              

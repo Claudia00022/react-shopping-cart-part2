@@ -43,6 +43,7 @@ type Props = {
   buttonBack: () => void;
   backgroundColor: string;
   borderColor: string;
+  increaseQuantity : (id:number) => void;
 };
 
 const ColorSchemesExample: React.FC<Props> = ({
@@ -54,6 +55,7 @@ const ColorSchemesExample: React.FC<Props> = ({
   buttonBack,
   backgroundColor,
   borderColor,
+  increaseQuantity
 }) => {
   const [cartOpen, setCartOpen] = useState(false);
 
@@ -189,6 +191,7 @@ const ColorSchemesExample: React.FC<Props> = ({
                 cartItems={cartItems}
                 addToCart={addToCart}
                 removeFromCart={removeFromCart}
+                increaseQuantity={increaseQuantity}
               ></Cart>
             </Drawer>
           </Navbar.Collapse>

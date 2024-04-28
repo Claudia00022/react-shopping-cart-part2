@@ -41,17 +41,26 @@ function handleAdd(amount: number) {
 };
 
 function handleRemove(amount:number){
-  setProduct((prev) =>({
+  if(product.amount === 1 ){
+    setProduct((prev) =>({
+      ...prev,
+        amount: 1
+  
+    }))
+  }else{
+    setProduct((prev) =>({
     ...prev,
       amount: amount-1
 
   }))
+  }
+  
 }
 
 function test (){
   setProduct((prev) =>({
     ...prev,
-      amount: 0
+      amount: 1
 
   }))
 }
