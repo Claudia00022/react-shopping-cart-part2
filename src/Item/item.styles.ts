@@ -21,6 +21,15 @@ margin: auto;
     color: white;
 
   }
+  .buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
   
 `
 

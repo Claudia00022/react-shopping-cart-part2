@@ -37,7 +37,24 @@ function handleAdd(amount: number) {
       ...prev,
         amount: amount+1
 
-    }))}
+    }))
+};
+
+function handleRemove(amount:number){
+  setProduct((prev) =>({
+    ...prev,
+      amount: amount-1
+
+  }))
+}
+
+function test (){
+  setProduct((prev) =>({
+    ...prev,
+      amount: 0
+
+  }))
+}
 
 
   // const cartQuantity = cartItems.reduce((amount,item) => productAmount + amount,0);
@@ -56,12 +73,14 @@ function handleAdd(amount: number) {
         <div className="buttons">
           <Button
             style={{
+              width: "50px",
               backgroundColor: "transparent",
               color: "black",
               border: "1px solid rgba(0, 0, 0, 0.4)",
               borderRadius: 0,
             }}
             variant="contained"
+            onClick = {()=> {handleRemove(product.amount)}}
         
           >
             {" "}
@@ -70,6 +89,7 @@ function handleAdd(amount: number) {
           <p>{product.amount}</p>
           <Button
             style={{
+              width: "50px",
               backgroundColor: "transparent",
               color: "black",
               border: "1px solid rgba(0, 0, 0, 0.4)",
@@ -84,7 +104,7 @@ function handleAdd(amount: number) {
             +{" "}
           </Button>
         </div>
-        <Button onClick={() => handleAddToCart(product)}>Add to Basket</Button>
+        <Button onClick={() => {handleAddToCart(product); test()}}>Add to Basket</Button>
       </Card.Body>
     </StyledCard>
   );

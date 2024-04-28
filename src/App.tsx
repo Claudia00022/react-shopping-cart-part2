@@ -64,7 +64,7 @@ function App() {
       }
       //First timem the item is added
       return [...prev, { ...clickedItem, amount: clickedItem.amount }]; 
-    }); 
+    })
   }
 
   function handleRemoveFromCart(id: number) {
