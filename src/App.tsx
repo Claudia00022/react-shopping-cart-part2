@@ -4,6 +4,7 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home/Home";
 import SkinCare from "./pages/SkinCare/SkinCare";
+import Footer from "./Footer/Footer";
 //Styles
 import { Wrapper, StyledButton } from "./App.styles";
 import ColorSchemesExample from "./Navbar/CollapseNavbar";
@@ -168,6 +169,7 @@ function App() {
           />
         </Routes>
       </Router>
+      <Footer></Footer>
     </>
   );
 }
