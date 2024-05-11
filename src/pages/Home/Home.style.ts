@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 
 export const Wrapper = styled.div`
 background-image: url(${process.env.PUBLIC_URL + "images/backgrounImg.jpg"});
-height: 100vh;
+height:93vh;
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;

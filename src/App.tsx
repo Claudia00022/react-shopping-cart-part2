@@ -25,6 +25,8 @@ function App() {
   const [borderColor, setBorderColor] = useState("#BEB985")
   
   const [productAmount, setProductAmount] = useState(0)  
+
+  const [footerMarginTop, setFooterMarginTop] = useState("0px");
   
   
 
@@ -47,26 +49,7 @@ function App() {
 
     return items.reduce((ack: number, item) => ack + item.amount, 0);
 
-  }
-
-  // function handleAddToCart(clickedItem: CartItemType) {
-  //   setCartItems((prev) => {
-  //     //1.Is the item already added in the cart?
-  
-  //     const isItemInCart = prev.find((item) => item.id === clickedItem.id);
-     
-
-  //     if (isItemInCart) {
-  //       return prev.map((item) =>
-  //         item.id === clickedItem.id
-  //           ? { ...item, amount:clickedItem.amount + 1 }
-  //           : item
-  //       );
-  //     }
-  //     //First timem the item is added
-  //     return [...prev, { ...clickedItem, amount: 5 }]; 
-  //   })
-  // }
+  };
 
     function handleAddToCart(clickedItem: CartItemType) {
     setCartItems((prev) => {
@@ -117,11 +100,13 @@ function App() {
   function handleButtonClick(){
     setBackgroundColorNav("#98946B");
     setBorderColor("#FFFFFC");
+    setFooterMarginTop("50px");
   };
 
   function handleButtonBack(){
     setBackgroundColorNav("rgba(5, 5, 5, 0.42)");
     setBorderColor("#BEB985");
+    setFooterMarginTop("0px");
   };
 
 //   const getItemQuantity = (id:number) =>{
@@ -169,7 +154,9 @@ function App() {
           />
         </Routes>
       </Router>
-      <Footer></Footer>
+      <Footer
+      footerMargin = {footerMarginTop}
+      ></Footer>
     </>
   );
 }
