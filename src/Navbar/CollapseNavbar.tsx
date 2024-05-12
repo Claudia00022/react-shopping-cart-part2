@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpa } from "@fortawesome/free-solid-svg-icons";
 import Badge from "@mui/material/Badge";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link } from "react-router-dom";
 
 //Types
 import { CartItemType } from "../App";
@@ -92,6 +93,8 @@ const ColorSchemesExample: React.FC<Props> = ({
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
+              
+         
               <PageLink onClick={buttonBack} href="/#">
                 home
               </PageLink>
@@ -169,18 +172,20 @@ const ColorSchemesExample: React.FC<Props> = ({
                 hair care
               </PageLink>
 
-             
 
             </Nav>
 
-           
+          
             <StyledButton
+            href="/#LogInPage"
               style={{
                 borderColor: borderColor,
               }}
             >
               Log in{" "}
             </StyledButton>
+          
+         
 
             <Drawer
               anchor="right"
