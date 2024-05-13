@@ -11,6 +11,9 @@ import {
   import { LockOutlined } from "@mui/icons-material";
   import { useState } from "react";
   import { Link } from "react-router-dom";
+
+  //Styles
+  import { StyledTypography, StyledButton,  } from "../LogInPage/LogInPage.style";
   
   const Register = () => {
     const [name, setName] = useState("");
@@ -21,20 +24,18 @@ import {
   
     return (
       <>
-        <Container maxWidth="xs">
+        <Container maxWidth="xs" style={{marginTop: "200px", height:"100vh"
+        }}>
           <CssBaseline />
           <Box
             sx={{
-              mt: 20,
+           
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: "primary.light" }}>
-              <LockOutlined />
-            </Avatar>
-            <Typography variant="h5">Register</Typography>
+            <StyledTypography variant="h5">Register</StyledTypography>
             <Box sx={{ mt: 3 }}>
               <Grid container spacing={2}>
                 <Grid item xs={12}>
@@ -74,17 +75,17 @@ import {
                   />
                 </Grid>
               </Grid>
-              <Button
+              <StyledButton
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
                 onClick={handleRegister}
               >
                 Register
-              </Button>
+              </StyledButton>
               <Grid container justifyContent="flex-end">
                 <Grid item>
-                  <Link to="/login">Already have an account? Login</Link>
+                  <Link to="/LogInPage"  style={{color: "rgba(0, 0, 0, 0.70)"}}>Already have an account? Login</Link>
                 </Grid>
               </Grid>
             </Box>

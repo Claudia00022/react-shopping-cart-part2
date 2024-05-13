@@ -18,6 +18,8 @@ text-transform: none !important;
 
 export const StyledTypography = styled(Typography)`
 text-align: start !important;
+font-size: 18px !important;
+color: rgba(0, 0, 0, 0.87) !important ;
 `
 
 export const StyledBox = styled(Box)`

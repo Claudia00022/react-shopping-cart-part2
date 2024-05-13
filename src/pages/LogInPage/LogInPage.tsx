@@ -27,8 +27,8 @@ const LogInPage : React.FC = () => {
 
   return (
     <>
-    <Wrapper>
-      <Container maxWidth="xs" style={{border: "1px solid black"}}>
+    <Grid container spacing = {2} style={{marginTop: "100px", marginBottom: "100px"}}>
+      <Container maxWidth="xs" style={{ marginBottom: "100px"}}>
         <CssBaseline />
         <StyledBox
           sx={{
@@ -78,13 +78,13 @@ const LogInPage : React.FC = () => {
             <hr></hr>
             <Grid container justifyContent={"flex-end"}>
               <Grid item>
-                <Link to="/Register">Don't have an account? Register</Link>
+                <Link to="/Register" style={{color: "rgba(0, 0, 0, 0.70)"}}>Don't have an account? Register</Link>
               </Grid>
             </Grid>
           </Box>
         </StyledBox>
       </Container>
-      <Container maxWidth="xs" style={{border: "1px solid black"}}>
+      <Container maxWidth="xs" style={{ marginBottom: "100px"}}>
         <CssBaseline />
         <StyledBox
           sx={{
@@ -95,8 +95,8 @@ const LogInPage : React.FC = () => {
           }}
         >
 
-          <Typography variant="h5">New Customers</Typography>
-          <p>Set up an account so we can remember your details and speed up your next visit.</p>
+          <StyledTypography variant="h5">New Customers</StyledTypography>
+          <p style={{fontSize: "14px", paddingTop: "16px"}}>Set up an account so we can remember your details and speed up your next visit.</p>
           <Box sx={{ mt: 3 }}>
           
 
@@ -113,13 +113,13 @@ const LogInPage : React.FC = () => {
             <hr></hr>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link to="/LogInPage">Already have an account? Login</Link>
+                <Link to="/LogInPage"  style={{color: "rgba(0, 0, 0, 0.70)"}}>Already have an account? Login</Link>
               </Grid>
             </Grid>
           </Box>
         </StyledBox>
       </Container>
-      </Wrapper>
+      </Grid>
     </>
   );
 };
