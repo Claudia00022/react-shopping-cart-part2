@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# CosmeticShopApp
+This alication is example of  online stores where visitors can purchase products or services directly. This website provide detailed information about the products or services offered, including descriptions, specifications, pricing, and availability.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
