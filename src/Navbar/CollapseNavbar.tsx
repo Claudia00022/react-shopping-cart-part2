@@ -25,6 +25,7 @@ import {
   CartButton,
   StyledDropdown,
   PageLinkSkinCare,
+  PageLinkLogIn,
   StyledNavbarBrand,
 } from "./CollapseNavbarStyle";
 
@@ -176,14 +177,15 @@ const ColorSchemesExample: React.FC<Props> = ({
             </Nav>
 
           
-            <StyledButton
+            <PageLinkLogIn
             href="/#LogInPage"
+            onClick={buttonClick}
               style={{
                 borderColor: borderColor,
               }}
             >
               Log in{" "}
-            </StyledButton>
+            </PageLinkLogIn>
           
          
 

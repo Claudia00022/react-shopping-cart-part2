@@ -24,7 +24,7 @@ import {
   
     return (
       <>
-        <Container maxWidth="xs" style={{marginTop: "200px", height:"100vh"
+        <Container maxWidth="xs" style={{marginTop: "200px", height:"100vh", paddingRight: "40px", paddingLeft: "40px"
         }}>
           <CssBaseline />
           <Box

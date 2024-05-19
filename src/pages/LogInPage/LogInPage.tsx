@@ -27,7 +27,7 @@ const LogInPage : React.FC = () => {
 
   return (
     <>
-    <Grid container spacing = {2} style={{marginTop: "100px", marginBottom: "100px"}}>
+    <Grid container spacing = {2} style={{marginTop: "100px", marginBottom: "100px", paddingRight: "40px", paddingLeft: "40px"}}>
       <Container maxWidth="xs" style={{ marginBottom: "100px"}}>
         <CssBaseline />
         <StyledBox
