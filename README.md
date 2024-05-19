@@ -19,18 +19,18 @@ This alication is example of  online stores where visitors can purchase products
 - Product Listings: Displays products with images, descriptions, prices, and availability status.
 
 2.User Accounts and Profiles:
--Registration and Login: Enables users to create accounts, log in, and manage their profiles.
+- Registration and Login: Enables users to create accounts, log in, and manage their profiles.
 
 3.Search and Navigation:
--Search Bar: Helps users find products or information quickly.
--Category Navigation: Organized menus or filters to browse products by category, brand, price, etc.
+- Search Bar: Helps users find products or information quickly.
+- Category Navigation: Organized menus or filters to browse products by category, brand, price, etc.
 
 4.Product Information:
--Detailed Descriptions: Comprehensive information about each product, including specifications, features, and benefits.
--High-Quality Images and Videos: Visual content to help customers better understand the products.
+- Detailed Descriptions: Comprehensive information about each product, including specifications, features, and benefits.
+- High-Quality Images and Videos: Visual content to help customers better understand the products.
 
 5.Mobile Compatibility:
--Responsive Design: Ensures the website functions well on various devices, including desktops, tablets, and smartphones.
+- Responsive Design: Ensures the website functions well on various devices, including desktops, tablets, and smartphones.
 
 
 ### `npm run build`
