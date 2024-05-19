@@ -33,28 +33,41 @@ This alication is example of  online stores where visitors can purchase products
 - Responsive Design: Ensures the website functions well on various devices, including desktops, tablets, and smartphones.
 
 
-### `npm run build`
+## Future Features
+- Accounts, login/signup with personal account
+- Order History: Allows users to view their past purchases and track current orders.
+- Wishlist: Lets users save products for future reference or purchase.
+- Breadcrumbs: Provides a navigation trail to help users understand their location within the site.
+- Customer Reviews and Ratings: User-generated content that provides insights into product quality and satisfaction.
+- Discounts and Offers: Special deals, coupons, and promotional codes to attract buyers.
+- Email Newsletters: Subscription options for users to receive updates on new products, offers, and company news.
+- Social Media Integration: Links and sharing options for users to follow and share content on social media platforms.
+- Live Chat: Real-time assistance for users with questions or issues.
+- Contact Forms: Easy ways for users to reach out with inquiries or feedback.
+- FAQs and Help Sections: Informative resources to assist users with common questions and problems.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Dependencies
+- emotion/react
+- emotion/styled
+- fortawesome/fontawesome-svg-core
+- fortawesome/free-solid-svg-icons
+- fortawesome/react-fontawesome
+- mui/icons-material
+- mui/material
+- mui/styles
+- bootstrap
+- bootstrap-icon
+- react-bootstrap
+- styled-components
+- react-router-dom
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  ## What the app looks like
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  ![Screenshot 2024-05-19 191059](https://github.com/Claudia00022/claudia00022.github.io/assets/142623403/09d2ce73-dc00-4a82-bf4d-bcf85846ccfc)
+  ![Screenshot 2024-05-19 191144](https://github.com/Claudia00022/claudia00022.github.io/assets/142623403/c5cb1117-a413-463b-b774-11eeb2df2128)
+  ![Screenshot 2024-05-19 191215](https://github.com/Claudia00022/claudia00022.github.io/assets/142623403/0403b111-ef01-430a-b3ab-a8ef375ffee7)
+  ![Screenshot 2024-05-19 191237](https://github.com/Claudia00022/claudia00022.github.io/assets/142623403/46e75d66-8664-4e6a-98c2-05bed7ba9c4b)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
