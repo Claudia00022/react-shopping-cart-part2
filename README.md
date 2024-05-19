@@ -2,9 +2,10 @@
 This alication is example of  online stores where visitors can purchase products or services directly. This website provide detailed information about the products or services offered, including descriptions, specifications, pricing, and availability.
 
 
-## Available Scripts
-
-In the project directory, you can run:
+## How to run the app
+1.Either fork or download the app and open the folder in the cli 
+2.Install all dependencies using the "npm i" command 
+3. Start the web server using the "npm start" command. The app will be served at http://localhost:3000/ 4.Go to http://localhost:3000/ in your browser and organize your daily task
 
 ### `npm start`
 
