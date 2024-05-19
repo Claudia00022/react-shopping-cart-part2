@@ -7,18 +7,31 @@ This alication is example of  online stores where visitors can purchase products
 2.Install all dependencies using the "npm i" command 
 3. Start the web server using the "npm start" command. The app will be served at http://localhost:3000/ 4.Go to http://localhost:3000/ in your browser and organize your daily task
 
-### `npm start`
+## User Stories
+- A user can add choose product to the basket
+- A user can change quantity of products in the basket
+- A user can check prices, pricing and availability of products
+- After adding products to the basket a user can check total amount of products
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
+1.E-commerce Functionality:
+- Shopping Cart: Allows users to add products and review them before making a purchase.
+- Product Listings: Displays products with images, descriptions, prices, and availability status.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2.User Accounts and Profiles:
+-Registration and Login: Enables users to create accounts, log in, and manage their profiles.
 
-### `npm test`
+3.Search and Navigation:
+-Search Bar: Helps users find products or information quickly.
+-Category Navigation: Organized menus or filters to browse products by category, brand, price, etc.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4.Product Information:
+-Detailed Descriptions: Comprehensive information about each product, including specifications, features, and benefits.
+-High-Quality Images and Videos: Visual content to help customers better understand the products.
+
+5.Mobile Compatibility:
+-Responsive Design: Ensures the website functions well on various devices, including desktops, tablets, and smartphones.
+
 
 ### `npm run build`
 
